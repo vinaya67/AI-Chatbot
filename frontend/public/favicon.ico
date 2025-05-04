@@ -1,0 +1,2 @@
+# Example (optional)
+curl -o frontend/public/favicon.ico https://vitejs.dev/logo.svg
