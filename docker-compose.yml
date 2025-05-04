@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    environment:
+      - RALLY_API_KEY=your-rally-api-key
+      - RALLY_PROJECT=https://rally1.rallydev.com/slm/webservice/v2.0/project/12345
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    restart: always
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - frontend
+      - backend
+
+volumes:
+  ollama_data:
