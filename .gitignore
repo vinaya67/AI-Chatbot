@@ -1,0 +1,50 @@
+# === Node / React (frontend) ===
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.DS_Store
+
+# === Python / FastAPI (backend) ===
+backend/__pycache__/
+backend/env/
+backend/.env
+backend/.DS_Store
+
+# === Docker ===
+*.log
+*.pid
+docker-compose.override.yml
+
+# === Nginx ===
+nginx/ssl/
+nginx/.DS_Store
+
+# === VSCode ===
+.vscode/
+
+# === OS generated ===
+.DS_Store
+Thumbs.db
+
+# === Python bytecode ===
+*.pyc
+*.pyo
+*.pyd
+
+# === Virtual Environments ===
+env/
+venv/
+
+# === Ollama models cache (if mounted locally) ===
+ollama/.ollama/
+
+# === IDE specific ===
+.idea/
+
+# === Logs ===
+logs/
+*.log
+
+# === Test coverage ===
+coverage/
+.coverage
